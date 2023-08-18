@@ -22,14 +22,15 @@ incrementBtn.addEventListener("click", () => {
   counterValue.textContent = counter.value;
 });
 
-// Я сначала пробовал сделать так
-
-// decrementBtn.addEventListener("click", () => {
-//   counterValue.textContent += 1;
-// });
+// Я сначала пробовал сделать так без объекта, просто обращался к textContent-у value
+// const value = counterValue.textContent // = 0
 
 // incrementBtn.addEventListener("click", () => {
-//   counterValue.textContent -= 1;
+// counterValue.textContent -= 1;    // минус работал
+// });
+
+// decrementBtn.addEventListener("click", () => {
+// counterValue.textContent += 1;  // а тут было вот так 011111
 // });
 
 // Но у меня работало только отнимание, а прибавление считало вот так 01111
