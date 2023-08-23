@@ -13,22 +13,44 @@ const images = [
   },
 ];
 
+//*  работает как надо 👍🏻
+
 const imagesToContainer = document.querySelector(".gallery");
 
 const imagesList = [];
 
 images.forEach((image) => {
-  const galleryItem = document.createElement("li");
-  galleryItem.insertAdjacentHTML("afterbegin", "<img>");
-
-  const addedImagesToGallery = galleryItem.querySelector("img");
-  addedImagesToGallery.src = image.url;
-  addedImagesToGallery.alt = image.alt;
+  const galleryItem = `<li><img src="${image.url} alt="${image.alt}"></li>`;
   imagesList.push(galleryItem);
 });
 
-imagesToContainer.append(...imagesList);
+imagesToContainer.insertAdjacentHTML("beforeend", imagesList);
 
 // ** alt **
 // galleryImage.setAttribute("src", image.url);
 // galleryImage.setAttribute("alt", image.alt);
+
+//** без шаблонной строки сначала сделал */
+// const imagesToContainer = document.querySelector(".gallery");
+
+// const imagesList = [];
+
+// images.forEach((image) => {
+//   const galleryItem = document.createElement("li");
+//   galleryItem.insertAdjacentHTML("afterbegin", "<img>");
+
+//   const addedImagesToGallery = galleryItem.querySelector("img");
+//   addedImagesToGallery.src = image.url;
+//   addedImagesToGallery.alt = image.alt;
+//   imagesList.push(galleryItem);
+// });
+
+// imagesToContainer.append(...imagesList);
+
+// ** переделал но все добавляется по очереди :(
+// const imagesToContainer = document.querySelector(".gallery");
+
+// images.forEach((image) => {
+//   const galleryItem = `<li><img src="${image.url} alt="${image.alt}"></li>`;
+//   imagesToContainer.insertAdjacentHTML("beforeend", galleryItem);
+// });
