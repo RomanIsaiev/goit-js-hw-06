@@ -6,6 +6,7 @@ console.log(nameOutput);
 nameInput.addEventListener("input", onInputChange);
 
 function onInputChange(event) {
-  console.log(event.currentTarget.value);
-  nameOutput.textContent = event.currentTarget.value;
+  event.currentTarget.value === ""
+    ? (nameOutput.textContent = "Anonymous")
+    : (nameOutput.textContent = event.currentTarget.value);
 }
