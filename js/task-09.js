@@ -11,6 +11,6 @@ const currentColor = document.querySelector(".color");
 buttonElement.addEventListener("click", chageBackgroundColor);
 
 function chageBackgroundColor() {
-  currentColor.textContent = getRandomHexColor();
   bodyElement.style.backgroundColor = getRandomHexColor();
+  currentColor.textContent = bodyElement.style.backgroundColor;
 }
